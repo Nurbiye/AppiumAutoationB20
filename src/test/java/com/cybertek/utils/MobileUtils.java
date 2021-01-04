@@ -14,11 +14,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class MobileUtils {
-    //private static WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+    private static WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
 
-//    public static void clickWithWait(MobileElement mobileElement){
-//        wait.until(ExpectedConditions.elementToBeClickable(mobileElement)).click();
-//    }
+    public static void clickWithWait(MobileElement mobileElement){
+        wait.until(ExpectedConditions.elementToBeClickable(mobileElement)).click();
+    }
 
     public static void swipeScreen(Direction dir, AppiumDriver driver) {
         System.out.println("swipeScreen(): dir: '" + dir + "'"); // always log your actions
