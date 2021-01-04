@@ -5,8 +5,11 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -36,12 +39,20 @@ public class ChromeBrowserTest {
 
 
         @Test
-         public void mobileChromeTest(){
+         public void mobileChromeTest() throws Exception {
 
         driver.get("http://qa1.vytrack.com");
+        driver.findElement(By.id("prependedInput")).sendKeys("storemanager85");
+        driver.findElement(By.id("prependedInput2")).sendKeys("UserUser123", Keys.ENTER);
+        Thread.sleep(3000);
+
         }
 
 
+        @After
+    public void tearDown(){
+        driver.quit();
+        }
 
 
 
